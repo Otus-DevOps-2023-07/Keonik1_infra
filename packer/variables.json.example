@@ -1,12 +1,5 @@
-variable "folder_id" {
-  type = string
-  default = "aaaaaaaaaaaaaaa"
-}
-variable "source_image" {
-  type = string
-  default = "ubuntu-1604-lts"
-}
-variable "service_acc_key_path" {
-  type = string
-  default = "/home/user/key.json"
+{
+  "folder_id": "aaaaaaaaaaaaaaa",
+  "service_acc_key_path": "/home/user/key.json",
+  "source_image": "ubuntu-1604-lts"
 }
