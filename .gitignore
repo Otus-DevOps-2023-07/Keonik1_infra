@@ -7,4 +7,4 @@ history.txt
 *.tfvars
 .terraform/
 *.iam_key.json
-
+.terraform.lock.hcl
