@@ -31,7 +31,28 @@ variable "service_account_key_file" {
   description = "key .json"
 }
 
-variable node_count {
+variable "app_node_count" {
   default     = "1"
-  description = "Count of nodes"
+  description = "Count of app nodes"
+}
+
+variable "db_node_count" {
+  default     = "1"
+  description = "Count of db nodes"
+}
+
+variable "app_disk_image" {
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base-10-04-2023"
+}
+
+variable "db_disk_image" {
+  description = "Disk image for reddit db"
+  default     = "reddit-db-base-10-04-2023"
+}
+
+variable "node_type" {
+  type        = string
+  default     = ""
+  description = "Node type. Example: -prod or -dev"
 }
