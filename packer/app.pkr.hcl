@@ -16,7 +16,7 @@ source "yandex" "ubuntu16" {
   folder_id = "${var.folder_id}"
   source_image_family = "${var.source_image}"
   image_name = "reddit-app-base-${formatdate("MM-DD-YYYY", timestamp())}"
-  image_family = "reddit-db-base"
+  image_family = "reddit-app-base"
   ssh_username = "ubuntu"
   platform_id = "standard-v1"
   use_ipv4_nat = true

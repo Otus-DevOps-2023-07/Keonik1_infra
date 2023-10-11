@@ -5,19 +5,14 @@
             "service_account_key_file": "{{user `service_acc_key_path`}}",
             "folder_id": "{{user `folder_id`}}",
             "source_image_family": "{{user `source_image`}}",
-            "image_name": "reddit-basejson-Q${formatdate(\"MM-DD-YYYY\", timestamp())}",
-            "image_family": "reddit-basejson",
+            "image_name": "reddit-db-base-${formatdate(\"MM-DD-YYYY\", timestamp())}",
+            "image_family": "reddit-db-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
             "use_ipv4_nat": true
         }
     ],
     "provisioners": [
-        {
-            "type": "shell",
-            "script": "./scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
-        },
         {
             "type": "shell",
             "script": "./scripts/install_mongodb.sh",
