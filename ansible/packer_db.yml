@@ -12,9 +12,9 @@
         autoremove: yes
         pkg:
           - mongodb 
-          
+
     - name: start mongodb
-      ansible.builtin.systemd:
+      systemd:
         name: mongodb
         enabled: yes
         state: started

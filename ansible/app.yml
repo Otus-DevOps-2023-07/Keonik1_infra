@@ -15,7 +15,7 @@
       notify: reload puma
 
     - name: Reload systemd daemon
-      ansible.builtin.systemd:
+      systemd:
         daemon_reexec: true
       notify: reload puma
       
@@ -26,7 +26,7 @@
         owner: ubuntu
         group: ubuntu
       notify: reload puma
-      
+
     - name: enable puma
       systemd: name=puma enabled=yes
 

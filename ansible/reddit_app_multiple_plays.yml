@@ -31,7 +31,7 @@
       notify: reload puma
 
     - name: Reload systemd daemon
-      ansible.builtin.systemd:
+      systemd:
         daemon_reexec: true
 
     - name: Add config for DB connection
