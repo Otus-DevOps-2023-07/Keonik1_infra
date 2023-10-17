@@ -12,6 +12,7 @@
         autoremove: yes
         pkg:
           - mongodb 
+          
     - name: start mongodb
       ansible.builtin.systemd:
         name: mongodb

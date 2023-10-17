@@ -29,15 +29,18 @@
         src: files/puma.service
         dest: /etc/systemd/system/puma.service
       notify: reload puma
+
     - name: Reload systemd daemon
       ansible.builtin.systemd:
         daemon_reexec: true
+
     - name: Add config for DB connection
       template:
         src: templates/db_config.j2
         dest: /home/ubuntu/db_config
         owner: ubuntu
         group: ubuntu
+
     - name: enable puma
       systemd: name=puma enabled=yes
 
@@ -52,6 +55,7 @@
         dest: /home/ubuntu/reddit
         version: monolith
       notify: reload puma
+
     - name: Bundle install
       bundler:
         state: present
