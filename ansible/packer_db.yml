@@ -1,0 +1,19 @@
+---
+- name: Install mongodb and start service
+  hosts: all
+  become: true
+  tasks:
+    - name: Install mongodb
+      apt: 
+        update_cache: yes
+        cache_valid_time: 86400
+        install_recommends: no
+        autoclean: yes
+        autoremove: yes
+        pkg:
+          - mongodb 
+    - name: start mongodb
+      ansible.builtin.systemd:
+        name: mongodb
+        enabled: yes
+        state: started

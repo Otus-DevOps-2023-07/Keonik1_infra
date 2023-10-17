@@ -1,0 +1,16 @@
+---
+- name: Install ruby and bundler
+  hosts: all
+  become: true
+  tasks:
+    - name: Install ruby and bundler
+      apt: 
+        update_cache: yes
+        cache_valid_time: 86400
+        install_recommends: no
+        autoclean: yes
+        autoremove: yes
+        pkg:
+          - ruby-full 
+          - ruby-bundler 
+          - build-essential

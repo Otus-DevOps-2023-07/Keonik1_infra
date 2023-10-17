@@ -25,9 +25,8 @@ source "yandex" "ubuntu16" {
 build {
   sources = ["source.yandex.ubuntu16"]
 
-  provisioner "shell" {
+  provisioner "ansible" {
     name            = "mongodb"
-    script          = "./scripts/install_mongodb.sh"
-    execute_command = "sudo {{.Path}}"
+    playbook_file   = "ansible/packer_db.yml"
   }
 }
