@@ -27,6 +27,6 @@ build {
 
   provisioner "ansible" {
     name            = "mongodb"
-    playbook_file   = "ansible/packer_db.yml"
+    playbook_file   = "ansible/playbooks/packer_db.yml"
   }
 }

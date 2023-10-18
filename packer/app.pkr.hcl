@@ -27,6 +27,6 @@ build {
 
   provisioner "ansible" {
     name            = "ruby"
-    playbook_file   = "ansible/packer_app.yml"
+    playbook_file   = "ansible/playbooks/packer_app.yml"
   }
 }
